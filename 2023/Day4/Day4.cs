@@ -1,31 +1,16 @@
-﻿using System.Diagnostics.Metrics;
-
-namespace AdventOfCode._2023.Day4
+﻿namespace AdventOfCode._2023.Day4
 {
     public static class Day4
     {
         public static int SolvePartOne(string[] lines)
         {
-            var cards = new List<Card>();
-
-            foreach (var line in lines)
-            {
-                var cardRegex = RegexHelper.GetCardValues();
-                cards.Add(CardHelper.ParseCard(line, cardRegex));
-            }
-
+            var cards = lines.Select(line => CardHelper.ParseCard(line, RegexHelper.GetCardValues())).ToList();
             return cards.Select(x => x.Score).Sum();
         }
 
         public static int SolvePartTwo(string[] lines)
         {
-            var cards = new List<Card>();
-
-            foreach (var line in lines)
-            {
-                var cardRegex = RegexHelper.GetCardValues();
-                cards.Add(CardHelper.ParseCard(line, cardRegex));
-            }
+            var cards = lines.Select(line => CardHelper.ParseCard(line, RegexHelper.GetCardValues())).ToList();
 
             var partTwo = cards.Select(_ => 1).ToArray();
 

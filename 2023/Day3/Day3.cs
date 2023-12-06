@@ -2,7 +2,7 @@
 
 partial class Day3
 {
-    public static int SolvePartOne(string[] lines)
+    public static string SolvePartOne(string[] lines)
     {
         var symbols = SchematicsHelpers.Parse(lines, RegexHelper.GetSymbols());
         var numbers = SchematicsHelpers.Parse(lines, RegexHelper.GetNumbers());
@@ -15,10 +15,10 @@ partial class Day3
                 sum += int.Parse(number.Number);
             }
         }
-        return sum;
+        return sum.ToString();
     }
 
-    public static int SolvePartTwo(string[] lines)
+    public static string SolvePartTwo(string[] lines)
     {
         var gears = SchematicsHelpers.Parse(lines, RegexHelper.GetGears());
         var numbers = SchematicsHelpers.Parse(lines, RegexHelper.GetNumbers());
@@ -40,7 +40,7 @@ partial class Day3
                 sum += neighbours.First() * neighbours.Last();
             }
         }
-        return sum;
+        return sum.ToString();
     }
 }
 

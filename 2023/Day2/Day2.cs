@@ -2,14 +2,14 @@ namespace adventofcode._2023.Day2;
 
 public static class Day2
 {
-    public static int SolvePartOne(string[] lines)
+    public static string SolvePartOne(string[] lines)
     {
-        return GetCubesFromGame(lines).Where(game => game.Red <= 12 && game.Green <= 13 && game.Blue <= 14).Select(game => game.Id).Sum();
+        return GetCubesFromGame(lines).Where(game => game.Red <= 12 && game.Green <= 13 && game.Blue <= 14).Select(game => game.Id).Sum().ToString();
     }
 
-    public static int SolvePartTwo(string[] lines)
+    public static string SolvePartTwo(string[] lines)
     {
-        return GetCubesFromGame(lines).Sum(game => game.Red * game.Green * game.Blue);
+        return GetCubesFromGame(lines).Sum(game => game.Red * game.Green * game.Blue).ToString();
     }
 
     private static List<Game> GetCubesFromGame(string[] lines)

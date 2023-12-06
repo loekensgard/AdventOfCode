@@ -2,7 +2,7 @@
 
 public static class Day1
 {
-    public static int SolvePartOne(string[] lines)
+    public static string SolvePartOne(string[] lines)
     {
         int partOne = 0;
         var matchStart = RegexHelper.FirstDigit();
@@ -16,10 +16,10 @@ public static class Day1
             partOne += int.Parse(first + last);
         }
 
-        return partOne;
+        return partOne.ToString();
     }
 
-    public static int SolvePartTwo(string[] lines)
+    public static string SolvePartTwo(string[] lines)
     {
         int partTwo = 0;
         var matchStart2 = RegexHelper.FirstDigitPartTwo();
@@ -33,7 +33,7 @@ public static class Day1
             partTwo += int.Parse(first + last);
         }
 
-        return partTwo;
+        return partTwo.ToString();
     }
 }
 

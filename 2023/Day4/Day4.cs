@@ -2,13 +2,13 @@
 {
     public static class Day4
     {
-        public static int SolvePartOne(string[] lines)
+        public static string SolvePartOne(string[] lines)
         {
             var cards = lines.Select(line => CardHelper.ParseCard(line, RegexHelper.GetCardValues())).ToList();
-            return cards.Select(x => x.Score).Sum();
+            return cards.Select(x => x.Score).Sum().ToString();
         }
 
-        public static int SolvePartTwo(string[] lines)
+        public static string SolvePartTwo(string[] lines)
         {
             var cards = lines.Select(line => CardHelper.ParseCard(line, RegexHelper.GetCardValues())).ToList();
 
@@ -25,7 +25,7 @@
                 i++;
             }
 
-            return partTwo.Sum();
+            return partTwo.Sum().ToString();
         }
 
     }
